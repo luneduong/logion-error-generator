@@ -15,16 +15,6 @@ OLD TAXONOMY:
     add, delete, change, accent, word_order, punctuation
     Old "change" is resolved at runtime into new-taxonomy subcategories 
     derived from the re-annotated dataset.
-
-Key design decisions:
-  - One independent function per category; no cross-function calls.
-  - Composition via compose_errors() for contingent dual-error examples.
-  - Position-weighted word selection using Beta distribution sampling,
-    matching the empirical positional bias measured in the real dataset.
-  - Dual taxonomy via a `taxonomy` flag on generate_corpus(); no duplicate
-    function implementations required.
-  - All functions are pure (no mutation of input lists).
-  - Unicode handling. NFD decomposition, category 'Mn' for diacritical marks, NFC recomposition.
 """
 
 import json
